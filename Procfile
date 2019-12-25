@@ -1,1 +1,1 @@
-web: gunicorn instant-django-master.wsgi --log-file -
+web: gunicorn config.wsgi --log-file -
