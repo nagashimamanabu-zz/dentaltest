@@ -184,14 +184,8 @@ LOGGING = {
         },
     }
 }
+import os
+import django_heroku
 
-DEBUG = False
-
-try:
-    from .local_settings import *
-except ImportError:
-    pass
-
-if not DEBUG:
-    import django_heroku
+if 'DYNO' in os.environ:
     django_heroku.settings(locals())
